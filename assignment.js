@@ -37,19 +37,19 @@ function hotelCost(day) {
   if (day < 0) {
     return 'Unexpected Day';
   } else if (day <= 10) {
-    // 1st 1day - 10day => 1day = 100
+    // 1st: 1day - 10day => 1day = 100
     money = day * 100;
   } else if (day <= 20) {
     const firstPart = 10 * 100;
     const remaining = day - 10;
-    // 2nd 10day => 1day = 80
+    // 2nd: 11day - 20day => 1day = 80
     const secondPart = remaining * 80;
     money = firstPart + secondPart;
   } else {
     const firstPart = 10 * 100;
     const secondPart = 10 * 80;
     const remaining = day - 20;
-    // 3rd 10day => 1day = 50
+    // 3rd: 21day - 21+..day => 1day = 50
     const thirdPart = remaining * 50;
     money = firstPart + secondPart + thirdPart;
   }
